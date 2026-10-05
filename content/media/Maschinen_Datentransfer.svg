@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 150" class="diagram">
+  <title>Internet für Maschinen: Zwei Maschinen transferieren über Schnittstellen Daten (Text, Binaries).</title>
+  <defs><marker id="pfeil-maschinen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-head" d="M0 0L10 5L0 10z"/></marker></defs>
+  <rect class="d-box d-tone-2" x="10" y="40" width="90" height="70" rx="4"/>
+  <text class="d-text d-strong" x="55" y="80" text-anchor="middle">Maschine</text>
+  <rect class="d-box d-tone-2" x="220" y="40" width="90" height="70" rx="4"/>
+  <text class="d-text d-strong" x="265" y="80" text-anchor="middle">Maschine</text>
+  <rect class="d-chip" x="100" y="67" width="9" height="16" rx="1"/>
+  <rect class="d-chip" x="211" y="67" width="9" height="16" rx="1"/>
+  <line class="d-line" x1="113" y1="75" x2="207" y2="75" marker-start="url(#pfeil-maschinen)" marker-end="url(#pfeil-maschinen)"/>
+  <text class="d-small" x="160" y="62" text-anchor="middle">Text, Binaries</text>
+  <text class="d-small" x="160" y="100" text-anchor="middle">Schnittstellen</text>
+</svg>

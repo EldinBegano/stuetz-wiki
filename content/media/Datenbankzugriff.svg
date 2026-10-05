@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 315" class="diagram">
+  <title>Datenbankzugriff: Mit JDBC verwendet man SQL-Statements und bekommt ein ResultSet (Tabellen) zurück. OR-Mapper geben bereits Objekte zurück und verwenden dabei JDBC.</title>
+  <defs><marker id="pfeil-dbzugriff" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-head" d="M0 0L10 5L0 10z"/></marker></defs>
+  <line class="d-divider" x1="340" y1="10" x2="340" y2="305"/>
+
+  <text class="d-text d-strong" x="170" y="28" text-anchor="middle">JDBC</text>
+  <text class="d-small" x="170" y="46" text-anchor="middle">Low Level API</text>
+  <rect class="d-box" x="95" y="60" width="150" height="56" rx="4"/>
+  <text class="d-text" x="170" y="83" text-anchor="middle">Programm</text>
+  <text class="d-small" x="170" y="104" text-anchor="middle">Zeilen → Objekte</text>
+  <line class="d-line" x1="145" y1="120" x2="145" y2="168" marker-end="url(#pfeil-dbzugriff)"/>
+  <text class="d-small" x="137" y="149" text-anchor="end">SQL-Statement</text>
+  <line class="d-line" x1="195" y1="170" x2="195" y2="122" marker-end="url(#pfeil-dbzugriff)"/>
+  <text class="d-small" x="203" y="149">ResultSet (Tabellen)</text>
+  <rect class="d-box d-tone-2" x="95" y="174" width="150" height="44" rx="4"/>
+  <text class="d-text d-strong" x="170" y="201" text-anchor="middle">JDBC</text>
+  <line class="d-line" x1="170" y1="218" x2="170" y2="244"/>
+  <path class="d-db" d="M122 252V294A48 9 0 0 0 218 294V252"/>
+  <ellipse class="d-db" cx="170" cy="252" rx="48" ry="9"/>
+  <text class="d-label" x="170" y="284" text-anchor="middle">Datenbank</text>
+
+  <text class="d-text d-strong" x="510" y="28" text-anchor="middle">OR-Mapper</text>
+  <text class="d-small" x="510" y="46" text-anchor="middle">JPA, EntityFramework, …</text>
+  <rect class="d-box" x="435" y="60" width="150" height="56" rx="4"/>
+  <text class="d-text" x="510" y="93" text-anchor="middle">Programm</text>
+  <line class="d-line" x1="510" y1="146" x2="510" y2="122" marker-end="url(#pfeil-dbzugriff)"/>
+  <text class="d-small" x="518" y="138">Objekte</text>
+  <rect class="d-box d-tone-1" x="435" y="148" width="150" height="34" rx="4"/>
+  <text class="d-text d-strong" x="510" y="170" text-anchor="middle">OR-Mapper</text>
+  <rect class="d-box d-tone-2" x="435" y="184" width="150" height="34" rx="4"/>
+  <text class="d-text d-strong" x="510" y="206" text-anchor="middle">JDBC</text>
+  <line class="d-line" x1="510" y1="218" x2="510" y2="244"/>
+  <path class="d-db" d="M462 252V294A48 9 0 0 0 558 294V252"/>
+  <ellipse class="d-db" cx="510" cy="252" rx="48" ry="9"/>
+  <text class="d-label" x="510" y="284" text-anchor="middle">Datenbank</text>
+</svg>

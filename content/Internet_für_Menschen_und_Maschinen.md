@@ -17,6 +17,8 @@ Unterschieden wird zwischen dem **Internet f체r Menschen** und dem **Internet f�
 
 ## Internet f체r Maschinen und Prozesse
 
+[[Datei:Maschinen_Datentransfer.svg|mini|Zwei Maschinen transferieren 체ber Schnittstellen Daten (Text, Binaries).]]
+
 Im Internet f체r Maschinen transferieren zwei Maschinen 체ber Schnittstellen Daten. Transferierbare Daten sind Text und Binaries.
 
 Technologien:

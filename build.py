@@ -22,6 +22,7 @@ Markup im Text:
     | Tabelle | mit | Kopfzeile |   (zweite Zeile |---|---|; Zelle mit "!" davor = Zeilenkopf)
     ; Begriff  und darunter  : Definition
     :: Hinweiszeile
+    [[Datei:Name.svg|mini|Beschriftung]]   Bild aus content/media/ (mini = rechts als Vorschaubild)
     ```java ... ```  Codeblock
 """
 
@@ -59,6 +60,7 @@ HEADING = re.compile(r"^(#{2,4})\s+(.+?)\s*$")
 LIST_ITEM = re.compile(r"^(\s*)([-*]|\d+\.)\s+(.*)$")
 TABLE_SEP = re.compile(r"^:?-{3,}:?$")
 CELL_SPLIT = re.compile(r"\|(?![^\[]*\]\])")  # | außerhalb von [[...]]
+FIGURE_FLAGS = {"mini", "links"}
 
 
 def esc(s):
@@ -85,6 +87,7 @@ BLOCK_TAG = re.compile(r"</?(?:p|div|li|ul|ol|dl|dt|dd|h[1-6]|table|tr|th|td|pre
 
 
 def plain(s):
+    s = re.sub(r"<svg\b.*?</svg>", " ", s, flags=re.S)
     return re.sub(r"\s+", " ", strip_tags(BLOCK_TAG.sub(" ", s))).strip()
 
 
@@ -133,6 +136,7 @@ class Wiki:
                          if not p.name.startswith("_")]
         self.titles = {}  # casefold-Titel -> (Artikel, Abschnitt)
         self.red_links = set()
+        self.svgs = {}  # Dateiname -> SVG zum Einbetten
         for a in self.articles:
             self._add(a.title, (a, ""))
         for a in self.articles:
@@ -153,6 +157,17 @@ class Wiki:
 
     def resolve(self, title):
         return self.titles.get(title.replace("_", " ").strip().casefold())
+
+    def media(self, name):
+        if name not in self.svgs:
+            path = CONTENT / "media" / name
+            if path.suffix != ".svg" or not path.is_file():
+                sys.exit(f"Bild nicht gefunden: content/media/{name}")
+            svg = re.sub(r"^<\?xml[^>]*>\s*", "", path.read_text(encoding="utf-8").strip())
+            title = re.search(r"<title>(.*?)</title>", svg, re.S)
+            label = esc(html.unescape(title.group(1).strip())) if title else esc(name)
+            self.svgs[name] = svg.replace("<svg", f'<svg role="img" aria-label="{label}"', 1)
+        return self.svgs[name]
 
 
 class Renderer:
@@ -206,7 +221,7 @@ class Renderer:
 
     @staticmethod
     def starts_block(s):
-        return (not s or s.startswith(("```", "|", ";", ":"))
+        return (not s or s.startswith(("```", "|", ";", ":", "[[Datei:"))
                 or HEADING.match(s) or LIST_ITEM.match(s))
 
     def blocks(self, src):
@@ -232,6 +247,9 @@ class Renderer:
                 i += 1
             elif s.startswith("::"):
                 out.append(f'<div class="hatnote">{self.inline(s[2:].strip())}</div>')
+                i += 1
+            elif s.startswith("[[Datei:") and s.endswith("]]"):
+                out.append(self.figure(s[2:-2]))
                 i += 1
             elif s.startswith("|"):
                 rows = []
@@ -307,6 +325,15 @@ class Renderer:
 
     # ----- Bausteine -----
 
+    def figure(self, spec):
+        name, *opts = [p.strip() for p in CELL_SPLIT.split(spec.partition(":")[2])]
+        flags = {o for o in opts if o in FIGURE_FLAGS}
+        caption = next((o for o in opts if o not in FIGURE_FLAGS), "")
+        cls = "thumb" + (" thumb-left" if "links" in flags else "") if "mini" in flags else "figure-wide"
+        cap = f"<figcaption>{self.inline(caption)}</figcaption>" if caption else ""
+        return (f'<figure class="{cls}"><a class="figure-image" href="/media/{quote(name)}" '
+                f'title="Bild vergrößern">{self.wiki.media(name)}</a>{cap}</figure>')
+
     def infobox(self, title, data):
         if not data:
             return ""
@@ -360,6 +387,7 @@ def layout(title, content, *, path, description="", toc="", tab="Artikel", sourc
 {meta}
 <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/static/wiki.css">
+<link rel="stylesheet" href="/static/diagram.css">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 <script src="/static/wiki.js" defer></script>
 </head>
@@ -552,6 +580,15 @@ def main():
                      source=a.path, modified=last_modified(a.path)))
         for name, anchor in a.redirects:
             write(f"wiki/{slug(name)}.html", redirect_page(name, a, anchor))
+
+    # Bilder auch einzeln abrufbar machen (Klick auf ein Bild), mit eingebetteten Diagramm-Stilen
+    diagram_css = (STATIC / "diagram.css").read_text(encoding="utf-8")
+    for svg_path in sorted((CONTENT / "media").glob("*.svg")):
+        svg = re.sub(r"(<svg\b[^>]*>)", lambda m: m.group(1) + f"<style><![CDATA[{diagram_css}]]></style>",
+                     svg_path.read_text(encoding="utf-8"), count=1)
+        write(f"media/{svg_path.name}", svg)
+        if svg_path.name not in wiki.svgs:
+            print(f"Hinweis: content/media/{svg_path.name} wird in keinem Artikel verwendet")
 
     write("index.html", main_page(wiki, rendered))
     special_pages(wiki)

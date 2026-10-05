@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" class="diagram">
+  <title>3-Schichten-Modell: 3. Presentation (Webserver), 2. Business (Application Server), 1. Persistence (Datenbank)</title>
+  <rect class="d-box" x="10" y="10" width="300" height="70" rx="4"/>
+  <circle class="d-badge" cx="42" cy="45" r="15"/>
+  <text class="d-text d-strong" x="42" y="50" text-anchor="middle">3</text>
+  <text class="d-text d-strong" x="72" y="41">Presentation</text>
+  <text class="d-small" x="72" y="61">Webserver</text>
+  <g class="d-icon" transform="translate(264 27)">
+    <rect x="0" y="0" width="32" height="15" rx="2"/><rect x="0" y="21" width="32" height="15" rx="2"/>
+    <path d="M6 7.5h10M6 28.5h10"/>
+  </g>
+
+  <rect class="d-box d-tone-2" x="10" y="90" width="300" height="70" rx="4"/>
+  <circle class="d-badge" cx="42" cy="125" r="15"/>
+  <text class="d-text d-strong" x="42" y="130" text-anchor="middle">2</text>
+  <text class="d-text d-strong" x="72" y="121">Business</text>
+  <text class="d-small" x="72" y="141">Application Server</text>
+  <g class="d-icon" transform="translate(264 107)">
+    <rect x="0" y="0" width="32" height="15" rx="2"/><rect x="0" y="21" width="32" height="15" rx="2"/>
+    <path d="M6 7.5h10M6 28.5h10"/>
+  </g>
+
+  <rect class="d-box d-tone-1" x="10" y="170" width="300" height="70" rx="4"/>
+  <circle class="d-badge" cx="42" cy="205" r="15"/>
+  <text class="d-text d-strong" x="42" y="210" text-anchor="middle">1</text>
+  <text class="d-text d-strong" x="72" y="201">Persistence</text>
+  <text class="d-small" x="72" y="221">Datenbank</text>
+  <g class="d-icon" transform="translate(264 186)">
+    <path d="M0 6V32A16 6 0 0 0 32 32V6"/><ellipse cx="16" cy="6" rx="16" ry="6"/>
+    <path d="M0 19A16 6 0 0 0 32 19"/>
+  </g>
+</svg>

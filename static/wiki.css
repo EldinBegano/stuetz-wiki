@@ -531,3 +531,22 @@ mark { padding: 0 1px; color: inherit; font-weight: 700; background: var(--mark)
 @media (prefers-reduced-motion: reduce) {
   .sidebar { transition: none; }
 }
+
+/* ---------- Bilder ---------- */
+
+.thumb,
+.figure-wide {
+  padding: 4px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+}
+.thumb { float: right; clear: right; width: 320px; max-width: 100%; margin: 0.3em 0 1em 1.5em; }
+.thumb-left { float: left; clear: left; margin: 0.3em 1.5em 1em 0; }
+.figure-wide { clear: both; max-width: 680px; margin: 1em 0; }
+.figure-image { display: block; }
+.figure-image svg { display: block; width: 100%; height: auto; background: var(--bg); border: 1px solid var(--border-subtle); }
+figcaption { padding: 0.4em 0.25em 0.15em; font-size: 0.8125rem; line-height: 1.45; }
+
+@media (max-width: 640px) {
+  .thumb, .thumb-left { float: none; width: auto; margin: 0.5em 0 1em; }
+}

@@ -12,6 +12,8 @@ Daten = "textbasiert (meist JSON)"
 
 ## Eigenschaften
 
+[[Datei:Server-Sent_Events.svg|mini|Unidirektionale Kommunikation vom Server zum Client]]
+
 - unidirektionale Kommunikation (Server zu Client)
 - Echtzeit-Updates
 - textbasierte Daten (meist JSON)

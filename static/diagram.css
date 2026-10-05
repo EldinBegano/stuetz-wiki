@@ -1,0 +1,32 @@
+/* Diagramme: eingebettet in Artikeln (Farben aus wiki.css) und als einzelne SVG-Datei unter /media/ (Ersatzwerte) */
+.diagram { font-family: var(--font-sans, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); }
+.d-box { fill: var(--bg-subtle, #f8f9fa); stroke: var(--border, #a2a9b1); stroke-width: 1.5; }
+.d-tone-1 { fill: var(--bg-accent-strong, #dbe7fb); }
+.d-tone-2 { fill: var(--bg-accent, #eaf3ff); }
+.d-frame { fill: none; stroke: var(--border, #a2a9b1); stroke-width: 1.5; stroke-dasharray: 6 4; }
+.d-chip { fill: var(--bg, #ffffff); stroke: var(--border, #a2a9b1); stroke-width: 1.2; }
+.d-db { fill: var(--bg-accent, #eaf3ff); stroke: var(--border, #a2a9b1); stroke-width: 1.5; }
+.d-line { fill: none; stroke: var(--text-muted, #54595d); stroke-width: 1.6; }
+.d-head { fill: var(--text-muted, #54595d); }
+.d-icon { fill: none; stroke: var(--text-muted, #54595d); stroke-width: 1.5; stroke-linecap: round; }
+.d-divider { stroke: var(--border-subtle, #c8ccd1); stroke-width: 1; stroke-dasharray: 4 4; }
+.d-badge { fill: var(--bg, #ffffff); stroke: var(--text-muted, #54595d); stroke-width: 1.5; }
+.d-text { fill: var(--text, #202122); font-size: 15px; }
+.d-label { fill: var(--text, #202122); font-size: 13px; }
+.d-small { fill: var(--text-muted, #54595d); font-size: 12.5px; }
+.d-strong { font-weight: 700; }
+
+:root:not(html) { background: var(--bg, #ffffff); }
+
+@media (prefers-color-scheme: dark) {
+  :root:not(html) {
+    --bg: #101418;
+    --bg-subtle: #181c21;
+    --bg-accent: #1a2538;
+    --bg-accent-strong: #22314b;
+    --text: #eaecf0;
+    --text-muted: #a2a9b1;
+    --border: #72777d;
+    --border-subtle: #3c4045;
+  }
+}

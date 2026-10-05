@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 150" class="diagram">
+  <title>Server-Sent Events: unidirektionale Kommunikation vom Server zum Client, textbasierte Daten (meist JSON)</title>
+  <defs><marker id="pfeil-sse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-head" d="M0 0L10 5L0 10z"/></marker></defs>
+  <text class="d-small" x="160" y="22" text-anchor="middle">Text (meist JSON)</text>
+  <rect class="d-box d-tone-1" x="10" y="35" width="90" height="80" rx="4"/>
+  <text class="d-text d-strong" x="55" y="80" text-anchor="middle">Server</text>
+  <rect class="d-box d-tone-2" x="220" y="35" width="90" height="80" rx="4"/>
+  <text class="d-text d-strong" x="265" y="80" text-anchor="middle">Client</text>
+  <line class="d-line" x1="106" y1="55" x2="212" y2="55" marker-end="url(#pfeil-sse)"/>
+  <line class="d-line" x1="106" y1="75" x2="212" y2="75" marker-end="url(#pfeil-sse)"/>
+  <line class="d-line" x1="106" y1="95" x2="212" y2="95" marker-end="url(#pfeil-sse)"/>
+  <text class="d-small" x="160" y="138" text-anchor="middle">unidirektional</text>
+</svg>

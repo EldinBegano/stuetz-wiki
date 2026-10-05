@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 290" class="diagram">
+  <title>Datenbankschema: externes Schema (Views), konzeptionelles Schema (ERD), internes Schema (Tabellen, Spalten, Datentypen, Constraints, Indizes)</title>
+  <rect class="d-box" x="10" y="10" width="300" height="88" rx="4"/>
+  <text class="d-text d-strong" x="160" y="34" text-anchor="middle">Externes Schema</text>
+  <rect class="d-chip" x="52" y="48" width="100" height="34" rx="4"/>
+  <text class="d-label" x="102" y="70" text-anchor="middle">View</text>
+  <rect class="d-chip" x="168" y="48" width="100" height="34" rx="4"/>
+  <text class="d-label" x="218" y="70" text-anchor="middle">View</text>
+
+  <rect class="d-box d-tone-2" x="10" y="106" width="300" height="70" rx="4"/>
+  <text class="d-text d-strong" x="160" y="134" text-anchor="middle">Konzeptionelles Schema</text>
+  <text class="d-small" x="160" y="156" text-anchor="middle">ERD</text>
+
+  <rect class="d-box d-tone-1" x="10" y="184" width="300" height="96" rx="4"/>
+  <text class="d-text d-strong" x="160" y="210" text-anchor="middle">Internes Schema</text>
+  <text class="d-small" x="160" y="234" text-anchor="middle">Tabellen, Spalten, Datentypen,</text>
+  <text class="d-small" x="160" y="254" text-anchor="middle">Constraints, Indizes</text>
+</svg>

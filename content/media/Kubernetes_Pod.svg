@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" class="diagram">
+  <title>Kubernetes: In einem Pod laufen mehrere Container.</title>
+  <rect class="d-frame" x="10" y="10" width="300" height="140" rx="8"/>
+  <text class="d-text d-strong" x="26" y="36">Pod</text>
+  <rect class="d-box d-tone-2" x="22" y="52" width="86" height="82" rx="4"/>
+  <text class="d-label" x="65" y="98" text-anchor="middle">Container</text>
+  <rect class="d-box d-tone-2" x="117" y="52" width="86" height="82" rx="4"/>
+  <text class="d-label" x="160" y="98" text-anchor="middle">Container</text>
+  <rect class="d-box d-tone-2" x="212" y="52" width="86" height="82" rx="4"/>
+  <text class="d-label" x="255" y="98" text-anchor="middle">Container</text>
+</svg>

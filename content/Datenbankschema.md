@@ -10,6 +10,8 @@ redirects = [
 ]
 navbox = ["datenbanken"]
 +++
+[[Datei:Datenbankschema.svg|mini|Externes, konzeptionelles und internes Schema]]
+
 Das **Datenbankschema** (Datenbank-Schema oder IEEE) besteht aus dem externen, dem konzeptionellen und dem internen Schema.
 
 ## Externes Schema

@@ -18,8 +18,12 @@ Kubernetes kümmert sich um:
 
 ## Aufbau
 
+[[Datei:Kubernetes_Pod.svg|mini|In einem Pod laufen mehrere Container.]]
+
 Kubernetes ist wie mehrere Docker Compose. In einem Pod laufen mehrere Container (wie bei Docker Compose).
 
 ## Skalierung
+
+[[Datei:Kubernetes_Skalierung.svg|mini|Je mehr Anfragen kommen, desto mehr [[Quarkus]]-Container werden hochgefahren.]]
 
 Kubernetes ist skalierbar: Je mehr Anfragen kommen, desto mehr [[Quarkus]]-Container werden hochgefahren.
