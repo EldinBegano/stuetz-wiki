@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" class="diagram">
+  <title>Breakeven-Analyse: Die Fixkosten bleiben bei jeder Stückzahl gleich. Die variablen Kosten steigen mit der Stückzahl, die Gesamtkosten liegen um die Fixkosten darüber. Am Breakeven-Point schneidet der Erlös die Gesamtkosten.</title>
+  <defs><marker id="pfeil-breakeven" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-head" d="M0 0L10 5L0 10z"/></marker></defs>
+
+  <line class="d-line" x1="80" y1="290" x2="640" y2="290" marker-end="url(#pfeil-breakeven)"/>
+  <line class="d-line" x1="80" y1="290" x2="80" y2="24" marker-end="url(#pfeil-breakeven)"/>
+  <text class="d-small" x="640" y="312" text-anchor="end">Stück</text>
+  <text class="d-small" x="88" y="30">Kosten</text>
+  <text class="d-small" x="72" y="306" text-anchor="end">0</text>
+
+  <line class="d-ln-3" x1="80" y1="220" x2="590" y2="220"/>
+  <text class="d-small d-tx-3" x="72" y="224" text-anchor="end">Fixkosten</text>
+  <text class="d-label d-tx-3" x="598" y="224">K<tspan font-size="10" dy="4">fix</tspan></text>
+
+  <line class="d-ln-2" x1="80" y1="290" x2="590" y2="113.5"/>
+  <text class="d-label d-tx-2" x="598" y="117">K<tspan font-size="10" dy="4">variabel</tspan></text>
+  <line class="d-ln-2" x1="80" y1="220" x2="590" y2="43.5"/>
+  <text class="d-label d-tx-2" x="598" y="47">K<tspan font-size="10" dy="4">ges</tspan></text>
+
+  <line class="d-ln-1" x1="80" y1="290" x2="440" y2="39.5"/>
+  <text class="d-label d-tx-1" x="448" y="44">Erlös</text>
+
+  <line class="d-divider" x1="280" y1="290" x2="280" y2="62"/>
+  <circle class="d-fill-1" cx="280" cy="150.8" r="5"/>
+  <text class="d-small d-tx-1 d-strong" x="280" y="54" text-anchor="middle">Breakeven-Point</text>
+</svg>

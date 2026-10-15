@@ -15,6 +15,14 @@
 .d-label { fill: var(--text, #202122); font-size: 13px; }
 .d-small { fill: var(--text-muted, #54595d); font-size: 12.5px; }
 .d-strong { font-weight: 700; }
+.d-ln-1 { fill: none; stroke: var(--d-c1, #3366cc); stroke-width: 2; }
+.d-ln-2 { fill: none; stroke: var(--d-c2, #14866d); stroke-width: 2; }
+.d-ln-3 { fill: none; stroke: var(--d-c3, #b35900); stroke-width: 2; }
+.d-fill-1 { fill: var(--d-c1, #3366cc); }
+.d-fill-3 { fill: var(--d-c3, #b35900); }
+.d-tx-1 { fill: var(--d-c1, #3366cc); }
+.d-tx-2 { fill: var(--d-c2, #14866d); }
+.d-tx-3 { fill: var(--d-c3, #b35900); }
 
 :root:not(html) { background: var(--bg, #ffffff); }
 
@@ -28,5 +36,8 @@
     --text-muted: #a2a9b1;
     --border: #72777d;
     --border-subtle: #3c4045;
+    --d-c1: #88a3e8;
+    --d-c2: #4cc2a0;
+    --d-c3: #f2a65a;
   }
 }

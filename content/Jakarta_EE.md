@@ -2,4 +2,4 @@
 redirects = ["JakartaEE"]
 navbox = ["backend"]
 +++
-**Jakarta EE** ist der Standard für das Backend.
+**Jakarta EE** (früher [[Java-Editionen|Java EE]]) ist der Standard für das Backend.

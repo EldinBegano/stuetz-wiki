@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" class="diagram">
+  <title>Governance: Das Steering Board gibt Problemstellung, Aufgabenstellung, Ziele und Rahmenbedingungen (Pflichtenheft) vor und bekommt Projektstatus und Produkt/Ergebnis zurück. Im Projekt wechseln sich spec-/test-driven und Dev-Iterationen (Scrum/KI) ab.</title>
+  <defs><marker id="pfeil-governance" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-head" d="M0 0L10 5L0 10z"/></marker></defs>
+
+  <rect class="d-frame" x="40" y="10" width="600" height="196" rx="6"/>
+  <text class="d-small d-strong" x="626" y="32" text-anchor="end">Governance</text>
+  <rect class="d-box d-tone-1" x="250" y="30" width="180" height="46" rx="4"/>
+  <text class="d-text d-strong" x="340" y="58" text-anchor="middle">Steering Board</text>
+
+  <line class="d-line" x1="310" y1="78" x2="310" y2="242" marker-end="url(#pfeil-governance)"/>
+  <text class="d-small" x="298" y="112" text-anchor="end">Problemstellung</text>
+  <text class="d-small" x="298" y="129" text-anchor="end">Aufgabenstellung</text>
+  <text class="d-small" x="298" y="146" text-anchor="end">Ziele</text>
+  <text class="d-small" x="298" y="163" text-anchor="end">Rahmenbedingungen (Pflichtenheft)</text>
+  <line class="d-line" x1="370" y1="244" x2="370" y2="80" marker-end="url(#pfeil-governance)"/>
+  <text class="d-small" x="382" y="120">Projektstatus</text>
+  <text class="d-small" x="382" y="137">Produkt/Ergebnis</text>
+
+  <rect class="d-box" x="110" y="244" width="460" height="86" rx="6"/>
+  <text class="d-small" x="124" y="262">Projekt</text>
+  <rect class="d-box d-tone-2" x="130" y="268" width="160" height="50" rx="4"/>
+  <text class="d-label" x="210" y="289" text-anchor="middle">Spec-driven</text>
+  <text class="d-label" x="210" y="307" text-anchor="middle">Test-driven</text>
+  <rect class="d-box d-tone-2" x="390" y="268" width="160" height="50" rx="4"/>
+  <text class="d-label" x="470" y="289" text-anchor="middle">Dev-Iterationen</text>
+  <text class="d-label" x="470" y="307" text-anchor="middle">Scrum/KI</text>
+  <path class="d-line" d="M292 282C320 268 360 268 388 282" marker-end="url(#pfeil-governance)"/>
+  <path class="d-line" d="M388 304C360 318 320 318 292 304" marker-end="url(#pfeil-governance)"/>
+</svg>

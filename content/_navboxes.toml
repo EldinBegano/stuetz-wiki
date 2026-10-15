@@ -12,7 +12,7 @@ Technologien = ["SOAP", "REST", "GraphQL", "gRPC", "Server-Sent Events|SSE", "MQ
 titel = "Backend"
 
 [backend.gruppen]
-Technologien = ["Maven", "Quarkus", "Jakarta EE", "Kubernetes"]
+Technologien = ["Java-Editionen", "Maven", "Quarkus", "Jakarta EE", "Kubernetes"]
 Konzepte = [
   "Context und Dependency Injection|CDI",
   "Annotation (Java)|Annotationen",
@@ -26,5 +26,19 @@ titel = "Datenbanken"
 
 [datenbanken.gruppen]
 Sprache = ["SQL"]
-Entwurf = ["Normalisierung", "Datenbankschema", "Entität"]
-Zugriff = ["Datenbankzugriff|JDBC und OR-Mapper"]
+Entwurf = ["Normalisierung", "Integrität", "Datenbankschema", "Entität"]
+Zugriff = ["Datenbankzugriff|JDBC und OR-Mapper", "JPA"]
+
+[ki]
+titel = "Künstliche Intelligenz"
+
+[ki.gruppen]
+Grundlagen = ["KI", "Tokens", "Context (KI)|Context"]
+Arbeiten = ["Prompt-Engineering", "KI-Agent"]
+
+[projekt]
+titel = "Projektmanagement"
+
+[projekt.gruppen]
+Planung = ["Governance", "C4-Modell", "Kostenrechnung", "Services"]
+Entwicklung = ["Testen", "GitHub Workflows"]

@@ -1,5 +1,5 @@
 +++
-redirects = ["JDBI|Quarkus vs. JDBI und co."]
+redirects = ["JDBI|Quarkus vs. JDBI und co.", "Panache"]
 navbox = ["backend"]
 
 [infobox]
@@ -20,4 +20,11 @@ Unter [[Kubernetes]] werden mehr Quarkus-Container hochgefahren, je mehr Anfrage
 
 ### JDBI und co.
 
-- [[Annotation (Java)|Annotationen]]
+- funktioniert ohne „Magie“, also ohne [[Annotation (Java)|Annotationen]]
+
+## Gründe für ein Framework
+
+Gründe, bei einem Framework zu bleiben:
+
+- weniger Code
+- wird automatisch geupdatet

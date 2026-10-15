@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 270" class="diagram">
+  <title>Vom Prompt zum Ergebnis: Der initiale Prompt landet in einem flachen Tal, dem initialen Ergebnis. Eine genauere Spezifikation bringt über den Berg ins tiefere Tal, das finale Ergebnis.</title>
+  <defs><marker id="pfeil-prompt-spez" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-fill-1" d="M0 0L10 5L0 10z"/></marker></defs>
+
+  <path class="d-line" d="M20 100C80 100 140 170 200 170C260 170 260 70 300 70C350 70 380 230 440 230C500 230 520 90 560 90C600 90 630 120 660 130"/>
+
+  <path class="d-ln-1" stroke-dasharray="5 4" d="M110 46C150 60 180 110 194 150" marker-end="url(#pfeil-prompt-spez)"/>
+  <text class="d-label d-tx-1" x="104" y="38" text-anchor="middle">Initial Prompt</text>
+  <circle class="d-fill-1" cx="200" cy="162" r="7"/>
+  <text class="d-small" x="200" y="194" text-anchor="middle">Initial Result</text>
+
+  <path class="d-ln-1" d="M208 152C232 0 384 0 434 216" marker-end="url(#pfeil-prompt-spez)"/>
+  <text class="d-label d-tx-1" x="318" y="26" text-anchor="middle">genauere Spezifikation</text>
+  <circle class="d-fill-1" cx="440" cy="222" r="7"/>
+  <line class="d-line" x1="458" y1="229" x2="458" y2="196"/>
+  <path class="d-fill-3" d="M458 196H478L473 202L478 208H458Z"/>
+  <text class="d-small d-strong" x="440" y="256" text-anchor="middle">Final Result</text>
+</svg>

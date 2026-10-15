@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" class="diagram">
+  <title>Lebenszyklus eines Entity-Objekts in JPA: Mit new oder CDI erstellt ist es neu (transient). persist macht es Managed, rollback wieder neu. remove macht es Removed; rollback macht es dann Detached, persist wieder Managed. refresh aktualisiert ein Managed-Objekt, detach macht es Detached und merge wieder Managed.</title>
+  <defs><marker id="pfeil-jpa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-head" d="M0 0L10 5L0 10z"/></marker></defs>
+
+  <circle class="d-head" cx="100" cy="74" r="7"/>
+  <line class="d-line" x1="100" y1="81" x2="100" y2="148" marker-end="url(#pfeil-jpa)"/>
+  <text class="d-small" x="108" y="118">new oder CDI</text>
+
+  <rect class="d-box" x="30" y="150" width="140" height="48" rx="24"/>
+  <text class="d-text d-strong" x="100" y="172" text-anchor="middle">Neu</text>
+  <text class="d-small" x="100" y="189" text-anchor="middle">transient</text>
+
+  <rect class="d-box d-tone-1" x="270" y="150" width="140" height="48" rx="24"/>
+  <text class="d-text d-strong" x="340" y="179" text-anchor="middle">Managed</text>
+
+  <rect class="d-box" x="510" y="40" width="140" height="48" rx="24"/>
+  <text class="d-text d-strong" x="580" y="69" text-anchor="middle">Removed</text>
+
+  <rect class="d-box d-tone-2" x="510" y="260" width="140" height="48" rx="24"/>
+  <text class="d-text d-strong" x="580" y="289" text-anchor="middle">Detached</text>
+
+  <line class="d-line" x1="170" y1="164" x2="268" y2="164" marker-end="url(#pfeil-jpa)"/>
+  <text class="d-small" x="220" y="157" text-anchor="middle">persist</text>
+  <line class="d-line" x1="270" y1="186" x2="172" y2="186" marker-end="url(#pfeil-jpa)"/>
+  <text class="d-small" x="220" y="203" text-anchor="middle">rollback</text>
+
+  <path class="d-line" d="M296 150C288 110 338 110 330 148" marker-end="url(#pfeil-jpa)"/>
+  <text class="d-small" x="313" y="106" text-anchor="middle">refresh</text>
+
+  <path class="d-line" d="M360 150V56H508" marker-end="url(#pfeil-jpa)"/>
+  <text class="d-small" x="435" y="49" text-anchor="middle">remove</text>
+  <path class="d-line" d="M510 76H380V148" marker-end="url(#pfeil-jpa)"/>
+  <text class="d-small" x="445" y="93" text-anchor="middle">persist</text>
+
+  <line class="d-line" x1="580" y1="88" x2="580" y2="258" marker-end="url(#pfeil-jpa)"/>
+  <text class="d-small" x="588" y="178">rollback</text>
+
+  <path class="d-line" d="M360 198V292H508" marker-end="url(#pfeil-jpa)"/>
+  <text class="d-small" x="435" y="309" text-anchor="middle">detach</text>
+  <path class="d-line" d="M510 272H380V200" marker-end="url(#pfeil-jpa)"/>
+  <text class="d-small" x="445" y="264" text-anchor="middle">merge</text>
+</svg>

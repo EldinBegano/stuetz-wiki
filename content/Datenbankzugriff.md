@@ -4,7 +4,6 @@ redirects = [
   "ResultSet|JDBC",
   "OR-Mapper|OR-Mapper",
   "ORM|OR-Mapper",
-  "JPA|OR-Mapper",
   "EntityFramework|OR-Mapper",
 ]
 navbox = ["datenbanken"]
@@ -15,8 +14,12 @@ Für den **Datenbankzugriff** gibt es [[#JDBC|JDBC]] und [[#OR-Mapper|OR-Mapper]
 
 ## JDBC
 
-JDBC ist eine Low-Level-API. Man verwendet [[SQL]]-Statements und bekommt ein ResultSet (Tabellen) zurück. Einzelne Zeilen müssen in Objekte umgewandelt werden.
+JDBC ist eine Low-Level-API, der unterste Level auf die Datenbank.
+
+Vorteile: Persistieren von Daten in der Datenbank, Rechte verwalten, Data Retrieval.
+
+Man verwendet [[SQL]]-Statements und bekommt ein ResultSet (Tabellen) zurück. Einzelne Zeilen müssen in Objekte umgewandelt werden.
 
 ## OR-Mapper
 
-OR-Mapper (ORM) wie JPA, EntityFramework usw. geben bereits Objekte zurück. Dabei wird (in Java) [[#JDBC|JDBC]] verwendet.
+OR-Mapper (ORM, *Object-Relational Mapper*, objekt-relationale Zuordnung) wie [[JPA]], EntityFramework usw. geben bereits Objekte zurück: Ein Objekt wird in einer Zeile der Datenbank gespeichert. So wandelt man in OO-Sprachen die Zeilen von SQL in Objekte um. Dabei wird (in Java) [[#JDBC|JDBC]] verwendet.

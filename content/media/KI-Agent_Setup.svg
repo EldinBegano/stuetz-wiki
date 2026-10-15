@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 260" class="diagram">
+  <title>Setup: Vom Laptop geht der Prompt an die Superbox (Opus) in der Cloud. Die Superbox arbeitet mit der Devbox zusammen. Auf beiden läuft Claude in einer Tmux-Session.</title>
+  <defs><marker id="pfeil-agent-setup" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-head" d="M0 0L10 5L0 10z"/></marker></defs>
+
+  <rect class="d-box" x="56" y="98" width="88" height="58" rx="4"/>
+  <path class="d-box" d="M44 162H156L166 178H34Z"/>
+  <text class="d-label" x="100" y="204" text-anchor="middle">Laptop</text>
+
+  <line class="d-line" x1="166" y1="132" x2="254" y2="132" marker-end="url(#pfeil-agent-setup)"/>
+  <text class="d-small" x="207" y="122" text-anchor="middle">Prompt</text>
+
+  <rect class="d-frame" x="226" y="20" width="440" height="220" rx="18"/>
+  <text class="d-small d-strong" x="244" y="44">Cloud</text>
+
+  <rect class="d-box d-tone-1" x="258" y="72" width="160" height="124" rx="4"/>
+  <text class="d-text d-strong" x="338" y="98" text-anchor="middle">Superbox</text>
+  <text class="d-small" x="338" y="116" text-anchor="middle">Opus</text>
+  <rect class="d-chip" x="274" y="132" width="128" height="48" rx="4"/>
+  <text class="d-small" x="338" y="151" text-anchor="middle">tmux</text>
+  <text class="d-label d-strong" x="338" y="170" text-anchor="middle">Claude</text>
+
+  <line class="d-line" x1="422" y1="134" x2="486" y2="134" marker-start="url(#pfeil-agent-setup)" marker-end="url(#pfeil-agent-setup)"/>
+
+  <rect class="d-box d-tone-2" x="490" y="72" width="160" height="124" rx="4"/>
+  <text class="d-text d-strong" x="570" y="98" text-anchor="middle">Devbox</text>
+  <rect class="d-chip" x="506" y="132" width="128" height="48" rx="4"/>
+  <text class="d-small" x="570" y="151" text-anchor="middle">tmux</text>
+  <text class="d-label d-strong" x="570" y="170" text-anchor="middle">Claude</text>
+</svg>
