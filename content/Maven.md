@@ -1,4 +1,5 @@
 +++
+redirects = ["Maven Wrapper|Maven Wrapper", "mvnw|Maven Wrapper", "pom.xml|pom.xml"]
 navbox = ["backend"]
 
 [infobox]
@@ -16,3 +17,16 @@ Neben dem Management der Dependencies übernimmt Maven auch:
 - Test
 - Packaging
 - Deployment
+
+## pom.xml
+
+In der `pom.xml` stehen die Dependencies des Projekts (bei [[Quarkus]] die [[Quarkus#Erweiterungen|Erweiterungen]]) und die Plugins für Build und Test.
+
+## Maven Wrapper
+
+Der **Maven Wrapper** (`mvnw`, unter Windows `mvnw.cmd`) lädt die passende Maven-Version selbst herunter. Maven muss also nicht installiert sein und alle verwenden dieselbe Version.
+
+| Befehl | Bedeutung |
+|---|---|
+| `./mvnw quarkus:dev` | Quarkus im [[Quarkus#Dev-Modus|Dev-Modus]] starten |
+| `./mvnw test` | alle Tests ausführen (siehe [[Testen#Tests in Quarkus|Tests in Quarkus]]) |

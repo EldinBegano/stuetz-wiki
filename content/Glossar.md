@@ -3,6 +3,8 @@ redirects = [
   "Binär|Binär",
   "Binärdaten|Binär",
   "Cluster|Cluster",
+  "Conventional Commits|Conventional Commits",
+  "Commit-Message|Conventional Commits",
   "Ballung|Cluster",
   "Konglomerat|Cluster",
   "Datenmodell|Datenmodell",
@@ -24,6 +26,8 @@ redirects = [
   "Namespaces|Namespace",
   "Objekt-Identität|Objekt-Identität",
   "Persistenz|Persistenz",
+  "Seed-Daten|Seed-Daten",
+  "Testdaten|Seed-Daten",
   "Submodul|Submodul",
   "Git-Submodul|Submodul",
   "Sub-Modul|Submodul",
@@ -41,6 +45,8 @@ Das **Glossar** enthält kurze Begriffserklärungen.
 : Das Gegenteil von binär ist Text.
 ; Cluster
 : Ballung, Konglomerat
+; Conventional Commits
+: Schema für Commit-Messages: `typ: beschreibung`, z. B. `feat: …` (neue Funktion), `fix: …` (Fehler behoben), `test: …`, `docs: …`
 ; Datenmodell
 : die Datenstruktur
 ; Ephemeral
@@ -67,6 +73,8 @@ Das **Glossar** enthält kurze Begriffserklärungen.
 : dauerhaft speichern
 ; [[Proprietär]]
 : firmenspezifisch
+; Seed-Daten
+: Startdaten, die beim Start in die Datenbank eingefügt werden (z. B. `import.sql`); Tests verlassen sich darauf
 ; Submodul
 : ein Unterprojekt, das nur im Projekt instanziert wird und nur im Vaterprojekt bearbeitet werden kann (z. B. ein eigenes Repo für Rules und Skills eines [[KI-Agent|KI-Agenten]])
 ; Swimlanes

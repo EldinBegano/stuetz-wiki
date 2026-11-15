@@ -5,7 +5,7 @@
 titel = "Internet für Maschinen und Prozesse"
 
 [maschinen.gruppen]
-Grundlagen = ["Internet für Menschen und Maschinen", "HTTP-Methoden"]
+Grundlagen = ["Internet für Menschen und Maschinen", "HTTP-Methoden", "HTTP-Statuscodes"]
 Technologien = ["SOAP", "REST", "GraphQL", "gRPC", "Server-Sent Events|SSE", "MQTT", "WebSockets"]
 
 [backend]
@@ -17,6 +17,7 @@ Konzepte = [
   "Context und Dependency Injection|CDI",
   "Annotation (Java)|Annotationen",
   "JSON Binding und JSON Processing",
+  "DTO",
   "Monolith und Microservices",
   "3-Schichten-Modell",
 ]
@@ -27,7 +28,20 @@ titel = "Datenbanken"
 [datenbanken.gruppen]
 Sprache = ["SQL"]
 Entwurf = ["Normalisierung", "Integrität", "Datenbankschema", "Entität"]
-Zugriff = ["Datenbankzugriff|JDBC und OR-Mapper", "JPA"]
+Zugriff = ["Datenbankzugriff|JDBC und OR-Mapper", "JPA", "JPQL", "Panache"]
+Systeme = ["H2"]
+
+[frontend]
+titel = "Frontend"
+
+[frontend.gruppen]
+Framework = ["Angular"]
+Konzepte = [
+  "Angular#Standalone Components|Standalone Components",
+  "Angular#Signals|Signals",
+  "Angular#Control Flow|Control Flow",
+  "CORS",
+]
 
 [ki]
 titel = "Künstliche Intelligenz"

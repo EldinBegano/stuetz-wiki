@@ -17,6 +17,18 @@ redirects = [
   "Primary-Key-Strategien|Primärschlüsselstrategien",
   "Eager Loading|Eager und Lazy Loading",
   "Lazy Loading|Eager und Lazy Loading",
+  "Hibernate",
+  "Hibernate ORM",
+  "@Entity|Mapping",
+  "@Table|Mapping",
+  "@Column|Mapping",
+  "@OneToMany|Beziehungen",
+  "@ManyToOne|Beziehungen",
+  "@JoinColumn|Beziehungen",
+  "mappedBy|Beziehungen",
+  "Bidirektional|Beziehungen",
+  "@Transactional|Transaktionen",
+  "Transaktion|Transaktionen",
 ]
 navbox = ["datenbanken"]
 
@@ -24,8 +36,10 @@ navbox = ["datenbanken"]
 Langform = "Java Persistence API"
 Art = "[[Datenbankzugriff#OR-Mapper|OR-Mapper]]"
 Verwendet = "[[Datenbankzugriff#JDBC|JDBC]]"
+Implementierung = "Hibernate ORM"
+Abfragesprache = "[[JPQL]]"
 +++
-**JPA** (*Java Persistence API*) ist ein [[Datenbankzugriff#OR-Mapper|OR-Mapper]] für Java. Jedem Objekt wird eine Zeile in der Datenbank zugesprochen.
+**JPA** (*Java Persistence API*) ist ein [[Datenbankzugriff#OR-Mapper|OR-Mapper]] für Java. Jedem Objekt wird eine Zeile in der Datenbank zugesprochen. In [[Quarkus]] ist **Hibernate ORM** die Implementierung, vereinfacht mit [[Panache]]; abgefragt wird mit [[JPQL]].
 
 ## Entity-Objekte
 
@@ -96,3 +110,43 @@ Beispiel für die eigene Tabelle bei der Strategie Table:
 : Entities werden direkt geladen.
 ; Lazy Loading
 : Entities werden erst geladen, wenn die Daten gefordert sind.
+
+## Mapping
+
+Mit [[Annotation (Java)|Annotationen]] legt man fest, wie eine Klasse auf eine Tabelle abgebildet wird:
+
+| Annotation | Bedeutung |
+|---|---|
+| `@Entity` | Klasse ist eine [[Entität]] |
+| `@Table(name = "BOOKS")` | Tabellenname, falls er anders als der Klassenname ist |
+| `@Id`, `@GeneratedValue(strategy = IDENTITY)` | Primärschlüssel, siehe [[#Primärschlüsselstrategien|Primärschlüsselstrategien]] |
+| `@Column(name = "…", nullable = false, unique = true)` | Spaltenname und Constraints (siehe [[Integrität]]) |
+
+Im Code sind die Namen camelCase (`weightKg`), in der Datenbank meist snake_case (`weight_kg`).
+
+## Beziehungen
+
+| Annotation | Bedeutung |
+|---|---|
+| `@ManyToOne` | viele Objekte gehören zu einem (z. B. viele Container zu einer Reise); diese Seite hat den Fremdschlüssel, Spaltenname mit `@JoinColumn` |
+| `@OneToMany(mappedBy = "…")` | die Gegenseite als Liste; `mappedBy` nennt das Feld auf der `@ManyToOne`-Seite |
+| `@OrderBy("…")` | Sortierung der Liste |
+
+Gibt es beide Seiten, ist die Beziehung **bidirektional**: Man kommt von der Reise zu ihren Containern und vom Container zu seiner Reise. Gespeichert wird die Beziehung nur über die Seite mit dem Fremdschlüssel (`@ManyToOne`).
+
+Bidirektionale Beziehungen erzeugen beim Umwandeln in JSON eine Endlosschleife. Deshalb gibt man Entities nicht direkt nach außen, sondern [[DTO|DTOs]] (oder blendet eine Seite mit `@JsonIgnore` aus).
+
+Getter ohne Feld (z. B. `getLoadedKg()`, das die Gewichte der Liste summiert) sind **berechnete Werte**, keine Spalten.
+
+## Transaktionen
+
+Schreibende Zugriffe (`persist`, `remove`, Änderungen) brauchen eine Transaktion. In [[Quarkus]] schreibt man `@Transactional` über die Methode.
+
+- Läuft die Methode durch: `commit`, alles wird gespeichert.
+- Wirft sie eine (Runtime-)Exception: `rollback`, **nichts** wird gespeichert (siehe [[SQL#TCL|TCL]]).
+
+So kann eine Service-Methode zuerst alle Regeln prüfen und bei einem Fehler einfach eine Exception werfen.
+
+## Schema und Testdaten
+
+Hibernate kann die Tabellen aus den Entities erzeugen (`drop-and-create`) und danach ein SQL-Skript wie `import.sql` mit Testdaten einspielen (siehe [[Quarkus#Konfiguration|Konfiguration]]).

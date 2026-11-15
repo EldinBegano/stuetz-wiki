@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" class="diagram">
+  <title>Datenmodell von Fruit Shipping: Die Tabelle VOYAGES (Reisen) hat mehrere CONTAINERS, ein Container enthält mehrere CARGO_ITEMS (Ladungsposten), und jeder Ladungsposten gehört zu genau einer Zeile in FRUITS (Obstsorten). Der Container berechnet loadedKg, freeKg, setpointTemperature und climacteric aus seinen Ladungsposten.</title>
+
+  <!-- VOYAGES -->
+  <rect class="d-box" x="30" y="30" width="230" height="142"/>
+  <rect class="d-box d-tone-1" x="30" y="30" width="230" height="30"/>
+  <text class="d-text d-strong" x="145" y="51" text-anchor="middle">VOYAGES</text>
+  <text class="d-label d-strong" x="44" y="80">id</text><text class="d-small" x="246" y="80" text-anchor="end">PK</text>
+  <text class="d-label" x="44" y="100">ship_name</text>
+  <text class="d-label" x="44" y="120">departure_port</text>
+  <text class="d-label" x="44" y="140">destination_port</text>
+  <text class="d-label" x="44" y="160">departure_date</text>
+
+  <!-- CONTAINERS -->
+  <rect class="d-box" x="420" y="30" width="230" height="164"/>
+  <rect class="d-box d-tone-1" x="420" y="30" width="230" height="30"/>
+  <text class="d-text d-strong" x="535" y="51" text-anchor="middle">CONTAINERS</text>
+  <text class="d-label d-strong" x="434" y="80">id</text><text class="d-small" x="636" y="80" text-anchor="end">PK</text>
+  <text class="d-label" x="434" y="100">container_number</text><text class="d-small" x="636" y="100" text-anchor="end">unique</text>
+  <text class="d-label" x="434" y="120">capacity_kg</text>
+  <text class="d-label" x="434" y="140">voyage_id</text><text class="d-small" x="636" y="140" text-anchor="end">FK</text>
+  <line class="d-divider" x1="420" y1="150" x2="650" y2="150"/>
+  <text class="d-small" x="434" y="167">berechnet: loadedKg, freeKg,</text>
+  <text class="d-small" x="434" y="184">setpointTemperature, climacteric</text>
+
+  <!-- FRUITS -->
+  <rect class="d-box" x="30" y="250" width="230" height="142"/>
+  <rect class="d-box d-tone-1" x="30" y="250" width="230" height="30"/>
+  <text class="d-text d-strong" x="145" y="271" text-anchor="middle">FRUITS</text>
+  <text class="d-label d-strong" x="44" y="300">id</text><text class="d-small" x="246" y="300" text-anchor="end">PK</text>
+  <text class="d-label" x="44" y="320">name</text><text class="d-small" x="246" y="320" text-anchor="end">unique</text>
+  <text class="d-label" x="44" y="340">climacteric</text>
+  <text class="d-label" x="44" y="360">min_temperature</text>
+  <text class="d-label" x="44" y="380">max_temperature</text>
+
+  <!-- CARGO_ITEMS -->
+  <rect class="d-box" x="420" y="250" width="230" height="142"/>
+  <rect class="d-box d-tone-1" x="420" y="250" width="230" height="30"/>
+  <text class="d-text d-strong" x="535" y="271" text-anchor="middle">CARGO_ITEMS</text>
+  <text class="d-label d-strong" x="434" y="300">id</text><text class="d-small" x="636" y="300" text-anchor="end">PK</text>
+  <text class="d-label" x="434" y="320">weight_kg</text>
+  <text class="d-label" x="434" y="340">origin_country</text>
+  <text class="d-label" x="434" y="360">container_id</text><text class="d-small" x="636" y="360" text-anchor="end">FK</text>
+  <text class="d-label" x="434" y="380">fruit_id</text><text class="d-small" x="636" y="380" text-anchor="end">FK</text>
+
+  <!-- VOYAGES 1 : n CONTAINERS -->
+  <line class="d-line" x1="260" y1="110" x2="420" y2="110"/>
+  <text class="d-label d-strong" x="268" y="103">1</text>
+  <text class="d-label d-strong" x="412" y="103" text-anchor="end">n</text>
+  <text class="d-small" x="340" y="128" text-anchor="middle">hat</text>
+
+  <!-- CONTAINERS 1 : n CARGO_ITEMS -->
+  <line class="d-line" x1="535" y1="194" x2="535" y2="250"/>
+  <text class="d-label d-strong" x="543" y="210">1</text>
+  <text class="d-label d-strong" x="543" y="245">n</text>
+  <text class="d-small" x="527" y="227" text-anchor="end">enthält</text>
+
+  <!-- FRUITS 1 : n CARGO_ITEMS -->
+  <line class="d-line" x1="260" y1="320" x2="420" y2="320"/>
+  <text class="d-label d-strong" x="268" y="313">1</text>
+  <text class="d-label d-strong" x="412" y="313" text-anchor="end">n</text>
+  <text class="d-small" x="340" y="338" text-anchor="middle">ist Sorte von</text>
+</svg>

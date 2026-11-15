@@ -26,11 +26,11 @@ navbox = ["maschinen"]
 
 ## GET
 
-Ein GET-Request wird verwendet, um Daten von einem Webserver zu lesen bzw. abzurufen. Wurden die Daten erfolgreich vom Server abgerufen, gibt GET den HTTP-Statuscode 200 (OK) zurück. GET ist *safe* und *idempotent*.
+Ein GET-Request wird verwendet, um Daten von einem Webserver zu lesen bzw. abzurufen. Wurden die Daten erfolgreich vom Server abgerufen, gibt GET den [[HTTP-Statuscodes#200|HTTP-Statuscode 200]] (OK) zurück. GET ist *safe* und *idempotent*.
 
 ## POST
 
-Ein POST-Request wird verwendet, um Daten (Datei, Formulardaten usw.) an den Server zu senden. Bei erfolgreicher Erstellung wird der HTTP-Statuscode 201 zurückgegeben. POST ist *unsafe* und *nicht idempotent*.
+Ein POST-Request wird verwendet, um Daten (Datei, Formulardaten usw.) an den Server zu senden. Bei erfolgreicher Erstellung wird der [[HTTP-Statuscodes#201|HTTP-Statuscode 201]] (Created) zurückgegeben. POST ist *unsafe* und *nicht idempotent*.
 
 ## PUT
 

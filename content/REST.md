@@ -13,6 +13,17 @@ redirects = [
   "QueryParam|Parameter",
   "RequestParam|Parameter",
   "CookieParam|Parameter",
+  "Fehlerbehandlung|Fehlerbehandlung",
+  "ServerExceptionMapper|Fehlerbehandlung",
+  "@ServerExceptionMapper|Fehlerbehandlung",
+  "Exception-Mapper|Fehlerbehandlung",
+  "ErrorDto|Fehlerbehandlung",
+  "Ressource|Ressourcen in Quarkus",
+  "REST-Ressource|Ressourcen in Quarkus",
+  "JAX-RS|Ressourcen in Quarkus",
+  "Jakarta REST|Ressourcen in Quarkus",
+  "IntelliJ HTTP Client|REST-Clients",
+  "HTTP-Datei|REST-Clients",
 ]
 navbox = ["maschinen"]
 
@@ -48,7 +59,43 @@ REST verwendet mehrere Endpoint-URLs.
 - HTTP Yac
 - Postman
 - Curl
-- Swagger
+- Swagger (in [[Quarkus#Dev-Modus|Quarkus]] unter `/q/swagger-ui`)
+- IntelliJ HTTP Client: Requests in `.http`-Dateien, Variablen wie `{{host}}` pro Environment in `http-client.env.json`; die erwarteten Antworten kann man als Kommentar dazuschreiben
+
+## Ressourcen in Quarkus
+
+Eine **Ressource** ist eine Klasse im Package `boundary` (siehe [[3-Schichten-Modell#Packages|Packages]]) mit Annotationen aus Jakarta REST (früher JAX-RS):
+
+| Annotation | Bedeutung |
+|---|---|
+| `@Path("books")` | Pfad der Klasse bzw. Methode, mit Platzhaltern wie `{id}` |
+| `@GET`, `@POST`, `@DELETE` … | [[HTTP-Methoden|HTTP-Methode]] |
+| `@PathParam("id")` | Wert aus dem Pfad |
+| `@Produces`, `@Consumes` | Datenformat, z. B. JSON |
+
+Die Ressource ruft nur Repositories und Services auf und gibt [[DTO|DTOs]] zurück, nie Entities. Mit `Response` setzt man den [[HTTP-Statuscodes|Statuscode]], z. B. `Response.created(uri)` für 201 mit `Location`-Header und `Response.noContent()` für 204.
+
+## Fehlerbehandlung
+
+Fehler sollen immer gleich aussehen, z. B. als JSON `{"message": "Book 999 not found"}` (ein Fehler-[[DTO]]).
+
+Die Ressource wirft dafür nur Exceptions; ein **Exception-Mapper** wandelt sie zentral in eine Antwort um. In Quarkus schreibt man eine Klasse mit Methoden, die mit `@ServerExceptionMapper` annotiert sind:
+
+```java
+@ServerExceptionMapper
+public RestResponse<ErrorDto> mapNotFound(NotFoundException e) {
+    return RestResponse.status(Response.Status.NOT_FOUND, new ErrorDto(e.getMessage()));
+}
+```
+
+| Exception | [[HTTP-Statuscodes|Statuscode]] |
+|---|---|
+| `NotFoundException` | 404 |
+| `BadRequestException`, Fehler der [[DTO#Validierung|Bean Validation]] | 400 |
+| eigene Exception für verletzte Geschäftsregeln | 409 |
+| nicht behandelte Exception | 500 |
+
+Haben mehrere eigene Exceptions eine gemeinsame Oberklasse, reicht ein Mapper für die Oberklasse.
 
 ## Geschichte
 
